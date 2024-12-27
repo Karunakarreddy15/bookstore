@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body style="background-image: url('{% static 'images/book.jpg' %}'); background-size: cover; background-position: center;">
+<h1>{{ view.object|default:"Add Book" }}</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'book_list' %}">Cancel</a>
+
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>

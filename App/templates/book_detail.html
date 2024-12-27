@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body style="background-image: url('{% static 'images/book.jpg' %}'); background-size: cover; background-position: center;">
+
+<h1> {{ object.title }}</h1>
+
+<p>Author: {{ objeect.author }}</p>
+<p>Published: {{ object.published_date }}</p>
+
+<a href="{% url 'book_edit' object.pk %}">Edit</a>
+<a href="{% url 'book_delete' object.pk %}">Delete</a>
+<a href="{% url 'book_list' %}">Back to List</a>
+
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>
